@@ -199,3 +199,53 @@
     "data": null
 }
 ```
+
+#### 上传用户照片URL:
+/manager/upload_face.do
+
+#### 请求头：
+
+|参数名|是否必须|类型|说明|
+|:----    |:---|:----- |-----   |
+|Content-type |是  |multipart/form-data |请求类型   |
+
+#### 请求方式：
+
+- POST
+
+
+#### 请求参数:
+
+|参数名|是否必须|类型|说明|
+|:----    |:---|:----- |-----   |
+|token |是  |String | token |
+|projectId |是  |int | 项目id |
+|userId |否  |int | 用户id |
+|file{N} |否  |file | 用户照片，多张照片file1,file2,file3 |
+
+
+#### 返回示例:
+
+**正确时返回:**
+
+```
+{
+    "code": 200,
+    "message": "操作成功",
+    "data":{"images":["url1","url2","url3"]
+}
+}
+
+
+```
+
+**错误时返回:**
+
+
+```
+{
+    "code": -1,
+    "msg": "暂无权限",
+    "data": null
+}
+```
