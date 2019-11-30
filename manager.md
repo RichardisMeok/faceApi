@@ -239,6 +239,7 @@
     "timeSetStr":null,
     "userName":"张三",
     "userNo":"15",
+    "errorInfo":"未检测到人脸"
 }]
 }
 
