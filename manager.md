@@ -257,7 +257,7 @@
 ```
 
 #### 上传用户照片URL:
-/manager/upload_face.do
+/manager/upload_imgs.do
 
 #### 请求头：
 
@@ -275,9 +275,7 @@
 |参数名|是否必须|类型|说明|
 |:----    |:---|:----- |-----   |
 |token |是  |String | token |
-|projectId |是  |int | 项目id |
-|userId |否  |int | 用户id |
-|file{N} |否  |file | 用户照片，多张照片file1,file2,file3 |
+|file{N} |是  |file | 用户照片，多张照片file1,file2,file3 |
 
 
 #### 返回示例:
@@ -301,6 +299,71 @@
 ```
 {
     "code": 4001,
+    "msg": "暂无权限",
+    "data": null
+}
+```
+
+
+#### 修改用户照片URL:
+/manager/update_user_face.do
+
+#### 请求头：
+
+|参数名|是否必须|类型|说明|
+|:----    |:---|:----- |-----   |
+|Content-type |是  |application/json |请求类型   |
+
+#### 请求方式：
+
+- POST
+
+#### 示例数据
+
+```
+{
+    "token":"5eb64b0db4ed4e8c9ee9597a81edca47",
+    "rfid":"1118439851",
+    "facePaths":[
+        "https://zixng2.oss-cn-beijing.aliyuncs.com/static/kaoqin/face/2cff663918294eeebfc566a445909dc4.jpg"
+    ]
+}
+
+
+```
+
+
+#### 请求参数:
+
+|参数名|是否必须|类型|说明|
+|:----    |:---|:----- |-----   |
+|token |是  |String | token |
+|rfid |是  |String | 用户卡号 |
+|facePaths |是  |array | 用户照片 |
+
+
+#### 返回示例:
+
+**正确时返回:**
+
+```
+{
+    "code": 200,
+    "message": "SUCCESS",
+    "msg": null,
+    "data": "操作成功",
+    "serverTime": 1575135424052
+}
+
+
+```
+
+**错误时返回:**
+
+
+```
+{
+    "code": 400,
     "msg": "暂无权限",
     "data": null
 }
