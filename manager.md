@@ -409,140 +409,7 @@
     "code": 200,
     "message": "SUCCESS",
     "msg": null,
-    "data": [
-        {
-            "id": 4,
-            "deviceName": null,
-            "mac": "xx",
-            "deviceType": null,
-            "inOut": null,
-            "projectCode": "18",
-            "projectId": 1,
-            "nirPreview": 1,
-            "lightTimeout": 10,
-            "pollingTime": 10,
-            "reboot": 1,
-            "needRefresh": 0,
-            "baseUrl": "xx",
-            "onlineState": null
-        },
-        {
-            "id": 5,
-            "deviceName": null,
-            "mac": "xx",
-            "deviceType": null,
-            "inOut": null,
-            "projectCode": "18",
-            "projectId": 1,
-            "nirPreview": 1,
-            "lightTimeout": 10,
-            "pollingTime": 10,
-            "reboot": 1,
-            "needRefresh": 0,
-            "baseUrl": "xx9",
-            "onlineState": null
-        },
-        {
-            "id": 6,
-            "deviceName": null,
-            "mac": "xx",
-            "deviceType": null,
-            "inOut": null,
-            "projectCode": "1",
-            "projectId": 1,
-            "nirPreview": 1,
-            "lightTimeout": 10,
-            "pollingTime": 10,
-            "reboot": 1,
-            "needRefresh": 0,
-            "baseUrl": "hxx",
-            "onlineState": null
-        },
-        {
-            "id": 8,
-            "deviceName": null,
-            "mac": "xx",
-            "deviceType": null,
-            "inOut": null,
-            "projectCode": "23",
-            "projectId": 1,
-            "nirPreview": 1,
-            "lightTimeout": 10,
-            "pollingTime": 10,
-            "reboot": 1,
-            "needRefresh": 0,
-            "baseUrl": "xx",
-            "onlineState": null
-        }
-    ],
-    "serverTime": 1575213437382
-}
-
-
-```
-
-**错误时返回:**
-
-
-```
-{
-    "code": 400,
-    "msg": "暂无权限",
-    "data": null
-}
-```
-
-
-#### 获取设备列表URL:
-/manager/update_device.do
-
-#### 请求头：
-
-|参数名|是否必须|类型|说明|
-|:----    |:---|:----- |-----   |
-|Content-type |是  |application/json |请求类型   |
-
-#### 请求方式：
-
-- POST
-
-#### 示例数据
-
-```
-     {
-            "deviceId": 4,
-            "deviceName": xx,
-            "inOut": null, //1进，2出
-            "nirPreview": 1,//开启红外 1，开启 0关闭
-            "lightTimeout": 10,//补光延迟秒
-            "pollingTime": 10,//获取数据轮询时间
-            "reboot": 1,//1重启，0不重启
-            "needRefresh": 0,//1 刷新，-1正在刷新，0未执行刷新
-            "baseUrl": "xx"//服务端基础地址
-           
-        }
-
-```
-
-
-#### 请求参数:
-
-|参数名|是否必须|类型|说明|
-|:----    |:---|:----- |-----   |
-|token |是  |String | token |
-|projectId |是  |int | 项目id |
-
-
-#### 返回示例:
-
-**正确时返回:**
-
-```
-{
-    "code": 200,
-    "message": "SUCCESS",
-    "msg": null,
-    "data": [
+    "data":  [
         {
             "id": 4,
             "deviceName": null,
@@ -609,6 +476,74 @@
         }
     ],
     "serverTime": 1575213437382
+}
+
+
+```
+
+**错误时返回:**
+
+
+```
+{
+    "code": 400,
+    "msg": "暂无权限",
+    "data": null
+}
+```
+
+
+#### 获取设备列表URL:
+/manager/update_device.do
+
+#### 请求头：
+
+|参数名|是否必须|类型|说明|
+|:----    |:---|:----- |-----   |
+|Content-type |是  |application/json |请求类型   |
+
+#### 请求方式：
+
+- POST
+
+#### 示例数据
+
+```
+     {
+           "token":"xxx",
+            "deviceId": 4,
+            "deviceName": xx,
+            "inOut": null, //1进，2出
+            "nirPreview": 1,//开启红外 1，开启 0关闭
+            "lightTimeout": 10,//补光延迟秒
+            "pollingTime": 10,//获取数据轮询时间
+            "reboot": 1,//1重启，0不重启
+            "needRefresh": 0,//1 刷新，-1正在刷新，0未执行刷新
+            "baseUrl": "xx"//服务端基础地址
+           
+        }
+
+```
+
+
+#### 请求参数:
+
+|参数名|是否必须|类型|说明|
+|:----    |:---|:----- |-----   |
+|token |是  |String | token |
+|projectId |是  |int | 项目id |
+
+
+#### 返回示例:
+
+**正确时返回:**
+
+```
+{
+    "code": 200,
+    "message": "SUCCESS",
+    "msg": null,
+    "data":""
 }
 
 
